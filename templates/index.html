@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html class="h-full bg-gray-100" lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Resumo Fiscal</title>
+        <link href="/static/output.css" rel="stylesheet">
+    </head>
+    <body class="h-full">
+        <div class="min-h-full">
+            <div class="bg-gradient-to-r from-sky-800 to-cyan-600 pb-32">
+                <nav class="bg-gradient-to-r from-sky-800 to-cyan-600">
+                    <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+                        <div class="border-b border-white border-opacity-20">
+                            <div
+                                class="flex items-center justify-between h-16 px-4 sm:px-0">
+                                <div class="flex items-center">
+                                    <div class="flex-shrink-0">
+                                        <img class="h-8 w-8"
+                                            src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg"
+                                            alt="Workflow">
+                                    </div>
+                                    <div class="hidden md:block">
+                                        <div class="ml-10 flex items-baseline space-x-4">
+                                            <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+                                            <a href="https://consultcontabil.github.io/ferramentas_contabeis/" class="text-gray-300 hover:bg-sky-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Home</a>
+                                            <a href="/"
+                                                class="bg-sky-500 text-white px-3 py-2 rounded-md text-sm font-medium"
+                                                aria-current="page">Resumo Fiscal</a>
+                                            <a href="#"
+                                                class="text-gray-300 hover:bg-sky-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Sobre Nós</a> 
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Mobile menu, show/hide based on menu state. -->
+                    <div class="border-b border-gray-700 md:hidden" id="mobile-menu">
+                        <div class="px-2 py-3 space-y-1 sm:px-3">
+                            <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+                            <a href="https://consultcontabil.github.io/ferramentas_contabeis/" class="text-gray-300 hover:bg-sky-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Home</a>
+                            <a href="/"
+                                class="bg-sky-500 text-white block px-3 py-2 rounded-md text-base font-medium"
+                                aria-current="page">Resumo Fiscal</a>
+                            <a href="#"
+                                class="text-gray-300 hover:bg-sky-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Sobre Nós</a>
+                        </div>
+                    </div>
+                </nav>
+                <header class="py-10">
+                    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                        <h1 class="text-3xl font-bold text-white">Resumo Fiscal</h1>
+                        <h2 class="text-2xl font-bold text-blue-300">Facilite a leitura dos débitos fiscais</h2>
+                        <h3 class="text-xl font-bold text-blue-300">Programa em fase de desenvolvimento</h3>
+                    </div>
+                </header>
+            </div>
+
+            <main class="-mt-32">
+                <div class="max-w-7xl mx-auto pb-12 px-4 sm:px-6 lg:px-8">
+                    <!-- Replace with your content -->
+                    <div class="bg-white rounded-lg shadow px-5 py-6 sm:px-6">
+                        <div class="border-4 border-dashed border-gray-200 rounded-lg h-96">
+                            <div class="h-80 text-center ">
+                                <h1 class="text-black font-bold text-2xl mt-3 mb-10">Extrair Débitos de relatório</h1>
+                                <form action="/resultado" method="post" enctype="multipart/form-data" ondrop="handleDrop(event)" ondragover="handleDragOver(event)">
+                                    <div class="border-dashed border-blue-300 border-2 cursor-pointer rounded-lg max-w-xs h-24 mx-auto">
+                                        <label for="arquivo_pdf" class="cursor-pointer">
+                                            <p id="label" class="mt-6">Selecionar arquivo PDF</p>
+                                            <p id="selected_file_name" class="mt-6"></p>
+                                        </label>
+                                    </div>
+                                    <input type="file" name="arquivo_pdf" id="arquivo_pdf" required onchange="displayFileName()" class="hidden">
+                                    <button class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 mt-8" type="submit">Extrair Débitos</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /End replace -->
+                    <div class="text-center mt-8">
+                        <a href="">Termos de uso</a>
+                    </div>
+                    <div class="text-center">
+                        <button id="inst" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 mt-8" onclick="displayInstrucoes()" >Instruções de uso</button>
+                    </div>
+                    <div class="text-center mt-8 h-auto bg-blue-900 text-white rounded-lg w-80 p-8 border mx-auto" id="instru" style="display: none;">
+                        <h2 class="font-medium text-2xl mt-3">Como usar o site</h2>
+                        <p>Este site permite que você extraia débitos fiscais de um relatório em PDF.</p>
+                        <ol>
+                            <li>
+                                <p>Selecione o arquivo do relatório fiscal em PDF.</p>
+                            </li>
+                            <li>
+                                <p>Clique no botão "Extrair Débitos".</p>
+                            </li>
+                            <li>
+                                <p>O programa extrairá todos os débitos com o status de "devedor".</p>
+                                <p>O programa também soma automaticamente todos os débitos encontrados.</p>
+                            </li>
+                            <li>
+                                <p>Caso o programa não encontre débitos, ele retornará que a empresa está livre de débitos.</p>
+                            </li>
+                            <li>
+                                <p class="font-medium">ATENÇÃO: Alguns formatos de PDF não são suportados pelo programa.</p>
+                                <p class="mb-3">Quando isso ocorre, o nome da empresa e o CNPJ presentes no relatório não aparecem.</p>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2/dist/alpine.min.js" defer></script>
+                </div>
+            </main>
+        </div>
+        <script>
+            const dropdownMenu = document.getElementById('dropdown-menu');
+            const dropdownButton = document.getElementById('dropdown-button');
+
+            dropdownButton.addEventListener('click', () => {
+                if (dropdownMenu.classList.contains('hidden')) {
+                dropdownMenu.classList.remove('hidden');
+                dropdownMenu.classList.add('block');
+                } else {
+                dropdownMenu.classList.remove('block');
+                dropdownMenu.classList.add('hidden');
+                }
+            });
+            function displayFileName() {
+                const fileInput = document.getElementById('arquivo_pdf');
+                var label = document.getElementById('label');
+                const fileName = fileInput.files[0].name;
+                const fileNameElement = document.getElementById('selected_file_name');
+                fileNameElement.textContent = fileName;
+                label.style.display = "none";
+            }
+            function displayInstrucoes() {
+                var instrucoes = document.getElementById('instru');
+                var botao = document.getElementById('inst');
+
+                var estado = instrucoes.style.display === "none";
+
+                if (estado) {
+                    instrucoes.style.display = "";
+                    botao.textContent = "Fechar";
+                } else {
+                    instrucoes.style.display = "none";
+                    botao.textContent = "Instruções de uso";
+                }
+            }
+            function handleDragOver(event) {
+                event.preventDefault();
+            }
+
+            function handleDrop(event) {
+                event.preventDefault();
+                const fileInput = document.getElementById('arquivo_pdf');
+                const files = event.dataTransfer.files;
+
+                if (files.length > 0) {
+                    fileInput.files = files;
+                    displayFileName();
+                }
+            }
+            document.addEventListener('DOMContentLoaded', function () {
+                const button = document.getElementById('teste');
+                const mobileMenu = document.getElementById('mobile-menu');
+
+                function toggleMenu() {
+                    const expanded = button.getAttribute('aria-expanded') === 'true' || false;
+                    button.setAttribute('aria-expanded', !expanded);
+                    mobileMenu.classList.toggle('hidden');
+                }
+
+                button.addEventListener('click', function () {
+                    toggleMenu();
+                });
+
+                // Verificar o tamanho da tela
+                const mediaQuery = window.matchMedia('(max-width: 768px)');
+
+                // Adicionar ouvinte de mídia
+                mediaQuery.addListener(function (mq) {
+                    // Verificar se a mídia corresponde ao tamanho da tela
+                    if (mq.matches) {
+                        // Executar ação para telas menores que 768px
+                        toggleMenu();
+                    } else {
+                        // Executar ação para telas maiores que 768px, se necessário
+                    }
+                });
+            });
+        </script>
+    </body>
+</html>

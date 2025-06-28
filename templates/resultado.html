@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html class="h-full bg-gray-100" lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Resumo Fiscal - resultado</title>
+        <link href="/static/output.css" rel="stylesheet">
+        <!-- colocar o resultado um embaixo do outro -->
+    </head>
+    <body class="h-full">
+        <div class="min-h-full">
+            <header class="pb-24 bg-gradient-to-r from-sky-800 to-cyan-600">
+                <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:max-w-7xl lg:px-8">
+                    <div
+                        class="relative flex flex-wrap items-center justify-center lg:justify-between print:hidden">
+                        <!-- Logo -->
+                        <div
+                            class="absolute left-0 py-5 flex-shrink-0 lg:static">
+                            <a href="#">
+                                <span class="sr-only">Workflow</span>
+                                <!-- https://tailwindui.com/img/logos/workflow-mark-cyan-200.svg -->
+                                <svg class="h-8 w-auto" fill="none"
+                                    viewBox="0 0 35 32"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path fill="#A5F3FC"
+                                        d="M15.258 26.865a4.043 4.043 0 01-1.133 2.917A4.006 4.006 0 0111.253 31a3.992 3.992 0 01-2.872-1.218 4.028 4.028 0 01-1.133-2.917c.009-.698.2-1.382.557-1.981.356-.6.863-1.094 1.47-1.433-.024.109.09-.055 0 0l1.86-1.652a8.495 8.495 0 002.304-5.793c0-2.926-1.711-5.901-4.17-7.457.094.055-.036-.094 0 0A3.952 3.952 0 017.8 7.116a3.975 3.975 0 01-.557-1.98 4.042 4.042 0 011.133-2.918A4.006 4.006 0 0111.247 1a3.99 3.99 0 012.872 1.218 4.025 4.025 0 011.133 2.917 8.521 8.521 0 002.347 5.832l.817.8c.326.285.668.551 1.024.798.621.33 1.142.826 1.504 1.431a3.902 3.902 0 01-1.504 5.442c.033-.067-.063.036 0 0a8.968 8.968 0 00-3.024 3.183 9.016 9.016 0 00-1.158 4.244zM19.741 5.123c0 .796.235 1.575.676 2.237a4.01 4.01 0 001.798 1.482 3.99 3.99 0 004.366-.873 4.042 4.042 0 00.869-4.386 4.02 4.02 0 00-1.476-1.806 3.994 3.994 0 00-5.058.501 4.038 4.038 0 00-1.175 2.845zM23.748 22.84c-.792 0-1.567.236-2.226.678a4.021 4.021 0 00-1.476 1.806 4.042 4.042 0 00.869 4.387 3.99 3.99 0 004.366.873A4.01 4.01 0 0027.08 29.1a4.039 4.039 0 00-.5-5.082 4 4 0 00-2.832-1.18zM34 15.994c0-.796-.235-1.574-.675-2.236a4.01 4.01 0 00-1.798-1.483 3.99 3.99 0 00-4.367.873 4.042 4.042 0 00-.869 4.387 4.02 4.02 0 001.476 1.806 3.993 3.993 0 002.226.678 4.003 4.003 0 002.832-1.18A4.04 4.04 0 0034 15.993z M5.007 11.969c-.793 0-1.567.236-2.226.678a4.021 4.021 0 00-1.476 1.807 4.042 4.042 0 00.869 4.386 4.001 4.001 0 004.366.873 4.011 4.011 0 001.798-1.483 4.038 4.038 0 00-.5-5.08 4.004 4.004 0 00-2.831-1.181z" />
+                                </svg>
+                            </a>
+                        </div>
+
+                        <div
+                            class="w-full py-5 lg:border-t lg:border-white lg:border-opacity-20">
+                            <div
+                                class="lg:grid lg:grid-cols-3 lg:gap-8 lg:items-center">
+                                <!-- Left nav -->
+                                <div class="hidden lg:block lg:col-span-2">
+                                    <nav class="flex space-x-4">
+                                        <a href="https://consultcontabil.github.io/ferramentas_contabeis/"
+                                            class="text-white text-sm font-medium rounded-md bg-white bg-opacity-0 px-3 py-2 hover:bg-opacity-10"> Home </a>
+
+                                        <a href="#"
+                                            class="bg-sky-500 text-white px-3 py-2 rounded-md text-sm font-medium" aria-current="page"> Resultados </a>
+
+                                        <a href="#"
+                                            class="text-cyan-100 text-sm font-medium rounded-md bg-white bg-opacity-0 px-3 py-2 hover:bg-opacity-10"> Sobre nós </a>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                    </div>
+                </div>
+            </header>
+            <main class="-mt-24 pb-8">
+                <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:max-w-7xl lg:px-8">
+                    <h1 class="sr-only">Profile</h1>
+                    <!-- Main 3 column grid -->
+                    <div
+                        class="grid grid-cols-1 gap-4 items-start lg:grid-cols-3 lg:gap-8">
+                        <!-- Left column -->
+                        <div class="grid grid-cols-1 gap-4 lg:col-span-2">
+                            <h1 class="font-medium text-white text-2xl print:hidden print:p-4">Resultado da Extração:</h1>
+                            <h3 class="text-xl font-bold text-blue-300 print:hidden">Programa em fase de desenvolvimento</h3>
+                            <!-- Welcome panel -->
+                            <section aria-labelledby="profile-overview-title">
+                                <div
+                                    class="rounded-lg bg-white overflow-hidden shadow">
+                                    <h2 class="sr-only"
+                                        id="profile-overview-title">Profile
+                                        Overview</h2>
+                                    <div class="bg-white p-6">
+                                        <div
+                                            class="sm:flex sm:items-center sm:justify-between">
+                                            <div class="sm:flex sm:space-x-5">
+                                                <div
+                                                    class="mt-4 text-center sm:mt-0 sm:pt-1 sm:text-left print:mt-4">
+                                                    <p class="text-xl font-bold text-gray-900 sm:text-2xl">{{ nome_empresa|safe }}</p>
+                                                    <div class="flex justify-between">
+                                                        <p class="text-sm font-medium text-gray-600">{{ cnpj }}</p>
+                                                        <p class="text-sm font-medium text-gray-600">{{ data }}</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="border-t border-gray-200 bg-gray-50 grid grid-cols-1 divide-y divide-gray-200 sm:grid-cols-3 sm:divide-y-0 sm:divide-x">
+                                        <div
+                                            class="px-6 py-5 text-sm font-medium text-center">
+                                            <span class="text-gray-900">Total pendencias (SIEF)</span>
+                                            {%if total_debitos %}
+                                                <span class="text-gray-600">{{total_debitos}}</span>
+                                            {%else%}
+                                                <span class="text-gray-600">R$ 00,00</span>
+                                            {%endif%}
+                                        </div>
+
+                                        <div
+                                            class="px-6 py-5 text-sm font-medium text-center">
+                                            <span class="text-gray-900">Total Exigibilidade</span>
+                                            {%if total_debitos_exigibilidade_suspensa %}
+                                                <span class="text-gray-600">{{total_debitos_exigibilidade_suspensa}}</span>
+                                            {%else%}
+                                                <span class="text-gray-600">R$ 00,00</span>
+                                            {%endif%}
+                                        </div>
+
+                                        <div
+                                            class="px-6 py-5 text-sm font-medium text-center">
+                                            <span class="text-gray-900">Total pendência Diver.</span>
+                                            {% if total_debitos_div_for %}
+                                                <span class="text-gray-600">{{total_debitos_div_for}}</span>
+                                            {%else%}
+                                                <span class="text-gray-600">R$ 00,00</span>
+                                            {%endif%}
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+
+                            <!-- Actions panel -->
+                            <section aria-labelledby="quick-links-title">
+                                <div class="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-1 gap-4 print:flex ">
+                                    <h2 class="sr-only" id="quick-links-title">Quick
+                                        links</h2>
+                                    {%if tabela %}
+                                        <div class="text-center w-full h-auto shadow bg-white rounded-lg p-4 print:h-full" id="bloco1">
+                                            <div class="mt-8">
+                                                <h3 class="text-lg font-medium">
+                                                        <span
+                                                            class="absolute inset-0"
+                                                            aria-hidden="true"></span>
+                                                            Pendência - Débito (SIEF)
+                                                </h3>
+                                                <div class="mt-4 flex justify-center divide-y">
+                                                    {% if tabela %}
+                                                        <p class="mt-2 text-sm text-gray-500 border-collapse">{{ tabela|safe }}</p>
+                                                        {% endif %}
+                                                    {% if result %}
+                                                        <p class="mt-2 font-medium text-sm bg-sky-500 bg-opacity-25 px-2 rounded-md text-gray-800">{{ result }}</p>
+                                                    {% else %}
+                                                </div>
+                                                <div class="flex justify-center px-6 mt-4">
+                                                    <p class="font-medium text-lg text-gray-800 bg-red-500 bg-opacity-25 rounded-md px-2 print:hidden">Total de débitos: {{ total_debitos }}</p>
+                                                    {% endif %}
+                                                </div>
+                                                <br>
+                                            </div>
+                                        </div>
+                                    {%else%}
+                                        <div class="print:hidden text-center w-full h-auto shadow bg-white rounded-lg p-4" id="bloco1">
+                                            <div class="mt-8">
+                                                <h3 class="text-lg font-medium">
+                                                        <span
+                                                            class="absolute inset-0"
+                                                            aria-hidden="true"></span>
+                                                            Pendência - Débito (SIEF)
+                                                </h3>
+                                                <div class="mt-4 flex justify-center divide-y .print\:flex ">
+                                                    {% if tabela %}
+                                                        <p class="mt-2 text-sm text-gray-500 border-collapse">{{ tabela|safe }}</p>
+                                                        {% endif %}
+                                                    {% if result %}
+                                                        <p class="mt-2 font-medium text-sm bg-sky-500 bg-opacity-25 px-2 rounded-md text-gray-800">{{ result }}</p>
+                                                    {% else %}
+                                                </div>
+                                                <div class="flex justify-center px-6 mt-4">
+                                                    <p class="font-medium text-lg text-gray-800 bg-red-500 bg-opacity-25 rounded-md px-2 print:hidden">Total de débitos: {{ total_debitos }}</p>
+                                                    {% endif %}
+                                                </div>
+                                                <br>
+                                            </div>
+                                        </div>
+                                    {%endif%}
+                                    {% if tabela_exigibilidade_suspensa %}
+                                        <div class="text-center w-full h-auto shadow bg-white rounded-lg p-4 .print\:flex print:h-full print:hidden" id="bloco2">
+                                            <div class="mt-6">
+                                                <h3 class="text-lg font-medium">
+                                                        <span
+                                                            class="absolute inset-0"
+                                                            aria-hidden="true"></span>
+                                                            Debitos com Exigibilidade Suspensa (SIEF)
+                                                    </a>
+                                                </h3>
+                                                <style>
+                                                    thead{
+                                                        background-color: #1784b6;
+                                                        color: aliceblue;
+                                                        opacity: 0.7;
+                                                    }
+                                                    th, td{
+                                                        padding: 10px;
+                                                        border: 1px solid #d6cfcf;
+                                                        text-align: left;
+                                                    }
+                                                    @media print {
+                                                        .print\:flex {
+                                                            display: flex;
+                                                        }
+                                                        .print\:w-24 {
+                                                        width: 6rem;
+                                                        }
+                                                        .print\:hidden {
+                                                            display: none;
+                                                        }
+                                                        .print\:w-24 {
+                                                            width: 6rem;
+                                                        }
+                                                    }
+
+                                                </style>
+                                                <div class="mt-4 flex justify-center">
+                                                    {% if tabela_exigibilidade_suspensa %}
+                                                        <p class="mt-2 text-sm text-gray-500">{{ tabela_exigibilidade_suspensa|safe }}</p>
+                                                    {%endif%}
+                                                    {%if result_exs %}
+                                                        <p class="mt-2 font-medium text-sm bg-sky-500 bg-opacity-25 px-2 rounded-md text-gray-800">{{ result_exs }}</p>
+                                                    {%else%}
+                                                </div>
+                                                <div class="flex justify-center px-6 mt-4 mb-3 ">
+                                                    <p class="font-medium mt-8 text-lg text-gray-800 bg-sky-500 bg-opacity-25 rounded-md px-2 print:hidden">Total de débitos: {{ total_debitos_exigibilidade_suspensa }}</p>
+                                                    {%endif%}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    {%else%}
+                                    <style>
+                                        thead{
+                                            background-color: #1784b6;
+                                            color: aliceblue;
+                                            opacity: 0.7;
+                                        }
+                                        th, td{
+                                            padding: 10px;
+                                            border: 1px solid #d6cfcf;
+                                            text-align: left;
+                                        }
+                                        @media print {
+                                            .print\:flex {
+                                                display: flex;
+                                            }
+                                            .print\:w-24 {
+                                            width: 6rem;
+                                            }
+                                            .print\:hidden {
+                                                display: none;
+                                            }
+                                            .print\:w-24 {
+                                                width: 6rem;
+                                            }
+                                        }
+
+                                    </style>
+                                        <div class="print:hidden text-center w-full h-auto shadow bg-white rounded-lg p-4 .print\:flex" id="bloco2">
+                                            <div class="mt-6">
+                                                <h3 class="text-lg font-medium">
+                                                        <span
+                                                            class="absolute inset-0"
+                                                            aria-hidden="true"></span>
+                                                            Debitos com Exigibilidade Suspensa (SIEF)
+                                                    </a>
+                                                </h3>
+                                                <div class="mt-4 flex justify-center">
+                                                    {% if tabela_exigibilidade_suspensa %}
+                                                        <p class="mt-2 text-sm text-gray-500">{{ tabela_exigibilidade_suspensa|safe }}</p>
+                                                    {%endif%}
+                                                    {%if result_exs %}
+                                                        <p class="mt-2 font-medium text-sm bg-sky-500 bg-opacity-25 px-2 rounded-md text-gray-800">{{ result_exs }}</p>
+                                                    {%else%}
+                                                </div>
+                                                <div class="flex justify-center px-6 mt-4 mb-3 ">
+                                                    <p class="font-medium mt-8 text-lg text-gray-800 bg-sky-500 bg-opacity-25 rounded-md px-2 print:hidden">Total de débitos: {{ total_debitos_exigibilidade_suspensa }}</p>
+                                                    {%endif%}
+                                                </div>
+                                            </div>  
+                                        </div>
+                                    {%endif%}
+                                    
+                                    {% if tabela_divergencia %}
+                                        <div class="text-center w-full h-auto shadow bg-white rounded-lg p-4 print:h-full" id="bloco3">
+                                            <div class="mt-8">
+                                                <h3 class="text-lg font-medium">
+                                                    <span class="absolute inset-0" aria-hidden="true"></span>
+                                                    Pendência - Divergência GFIP x GPS
+                                                </h3>
+                                                <div class="mt-4 flex justify-center">
+                                                    {% if tabela_divergencia %}
+                                                        <p class="mt-2 text-sm text-gray-500">{{ tabela_divergencia|safe }}</p>
+                                                    {% endif %}
+                                                    {% if result_div %}
+                                                        <p class="mt-2 font-medium text-sm bg-sky-500 bg-opacity-25 px-2 rounded-md text-gray-800">{{ result_div }}</p>
+                                                    {% else %}
+                                                </div>
+                                                <div class="flex justify-center px-6 mt-4 mb-3">
+                                                    <p class="font-medium mt-8 text-lg text-gray-800 bg-red-500 bg-opacity-25 rounded-md px-2 print:hidden">Total de débitos: {{ total_debitos_div_for }}</p>
+                                                    {% endif %}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    {% else %}
+                                        <div class="print:hidden text-center w-full h-auto shadow bg-white rounded-lg p-4" id="bloco3">
+                                            <div class="mt-8">
+                                                <h3 class="text-lg font-medium">
+                                                    <span class="absolute inset-0" aria-hidden="true"></span>
+                                                    Pendência - Divergência GFIP x GPS
+                                                </h3>
+                                                <div class="mt-4 flex justify-center">
+                                                    {% if tabela_divergencia %}
+                                                        <p class="mt-2 text-sm text-gray-500">{{ tabela_divergencia|safe }}</p>
+                                                    {% endif %}
+                                                    {% if result_div %}
+                                                        <p class="mt-2 font-medium text-sm bg-sky-500 bg-opacity-25 px-2 rounded-md text-gray-800">{{ result_div }}</p>
+                                                    {% else %}
+                                                </div>
+                                                <div class="flex justify-center px-6 mt-4 mb-3">
+                                                    <p class="font-medium mt-8 text-lg text-gray-800 bg-red-500 bg-opacity-25 rounded-md px-2 print:hidden">Total de débitos: {{ total_debitos_div_for }}</p>
+                                                    {% endif %}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    {%endif%}
+                                </div>
+                            </section>
+                        </div>
+                        <!-- Right column -->
+        <div class="grid grid-cols-1 gap-4 print:mt-0 print:hidden">
+            <!-- Announcements -->
+            <section aria-labelledby="announcements-title">
+                <div class="rounded-lg bg-white overflow-hidden shadow">
+                    <div class="p-6">
+                        <h2 class="text-base font-semibold text-gray-900" id="announcements-title2">Omissões</h2>
+                        <div class="flow-root mt-6 print:h-full">
+                            <ul role="list" class="-my-5 divide-y divide-gray-200">
+                                {%if not pendencia_gfip_li%}
+
+                                {%else%}
+                                        <li class="py-5 .print\:flex">
+                                            <div class="relative focus-within:ring-2 focus-within:ring-cyan-500">
+                                                <h3 class="text-sm font-semibold text-gray-800">
+                                                    <a class="hover:underline focus:outline-none" onclick="exibirTexto('pendencia_omissao')">
+                                                        <!-- Extend touch target to entire panel -->
+                                                        <span class="absolute inset-0" aria-hidden="true"></span>
+                                                        Pendência - Omissão de GFIP
+                                                        
+                                                    </a>
+                                                </h3>
+                                                <p class="mt-1 text-sm text-gray-600 line-clamp-2">{{pendencia_gfip_num}}</p>
+                                                <pre class="mt-1 text-sm text-gray-600 line-clamp-2" id="pendencia_omissao" style="display: none;">{{pendencia_gfip_li}}</pre>
+                                            </div>
+                                        </li>
+                                {%endif%}
+                                {%if not pendencia_dctfweb_li %}
+
+                                {%else%}
+                                        <li class="py-5 print:inline-flex">
+                                            <div class="relative focus-within:ring-2 focus-within:ring-cyan-500">
+                                                <h3 class="text-sm font-semibold text-gray-800">
+                                                    <a class="hover:underline focus:outline-none" onclick="exibirTexto('pendencia_omissao_dctf_web')">
+                                                        <!-- Extend touch target to entire panel -->
+                                                        <span class="relative inset-0" aria-hidden="true"></span>
+                                                        Omissão de DCTFWeb
+                                                    </a>
+                                                </h3>
+                                                <p class="mt-1 text-sm text-gray-600 line-clamp-2">{{pendencia_dctfweb_num}}</p>
+                                                <pre class="mt-1 text-sm text-gray-600 line-clamp-2 inline-flex print:block" id="pendencia_omissao_dctf_web" style="display: none;">{{pendencia_dctfweb_li}}</pre>
+                                            </div>
+                                        </li>
+                                {%endif%}
+                                {%if not pendencia_dctf_li%}
+
+                                {%else%}
+                                        <li class="py-5 .print\:flex">
+                                            <div class="relative focus-within:ring-2 focus-within:ring-cyan-500">
+                                                <h3 class="text-sm font-semibold text-gray-800">
+                                                    <a class="hover:underline focus:outline-none" onclick="exibirTexto('pendencia_omissao_dctf')">
+                                                        <!-- Extend touch target to entire panel -->
+                                                        <span class="absolute inset-0" aria-hidden="true"></span>
+                                                        Omissão de DCTF
+                                                    </a>
+                                                </h3>
+                                                <p class="mt-1 text-sm text-gray-600 line-clamp-2">{{pendencia_dctf_num}}</p>
+                                                <pre class="mt-1 text-sm text-gray-600 line-clamp-2" id="pendencia_omissao_dctf" style="display: none;">{{pendencia_dctf_li}}</pre>
+                                            </div>
+                                        </li>
+                                {%endif%}
+                                {%if not pendencia_efd_li %}
+
+                                {%else%}
+                                        <li class="py-5 .print\:flex">
+                                            <div class="relative focus-within:ring-2 focus-within:ring-cyan-500">
+                                                <h3 class="text-sm font-semibold text-gray-800">
+                                                    <a class="hover:underline focus:outline-none" onclick="exibirTexto('pendencia_omissao_efd')">
+                                                        <!-- Extend touch target to entire panel -->
+                                                        <span class="absolute inset-0" aria-hidden="true"></span>
+                                                        Omissão de EFD-CONTRIB
+                                                    </a>
+                                                </h3>
+                                                <p class="mt-1 text-sm text-gray-600 line-clamp-2">{{pendencia_efd_num}}</p>
+                                                <pre class="mt-1 text-sm text-gray-600 line-clamp-2" id="pendencia_omissao_efd" style="display: none;">{{pendencia_efd_li}}</pre>
+                                            </div>
+                                        </li>
+                                {%endif%}
+                                {%if not pendencia_ecf_li%}
+
+                                {%else%}
+                                        <li class="py-5 .print\:flex">
+                                            <div class="relative focus-within:ring-2 focus-within:ring-cyan-500">
+                                                <h3 class="text-sm font-semibold text-gray-800">
+                                                    <a class="hover:underline focus:outline-none" onclick="exibirTexto('pendencia_omissao_ecf')">
+                                                        <!-- Extend touch target to entire panel -->
+                                                        <span class="absolute inset-0" aria-hidden="true"></span>
+                                                        Omissão de ECF
+                                                    </a>
+                                                </h3>
+                                                <p class="mt-1 text-sm text-gray-600 line-clamp-2">{{pendencia_ecf_num}}</p>
+                                                <pre class="mt-1 text-sm text-gray-600 line-clamp-2" id="pendencia_omissao_ecf" style="display: none;">{{pendencia_ecf_li}}</pre>
+                                            </div>
+                                        </li>
+                                {%endif%}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Announcements -->
+            <section aria-labelledby="announcements-title">
+                <div class="rounded-lg bg-white overflow-hidden shadow">
+                    <div class="p-6">
+                        <h2 class="text-base font-semibold text-gray-900" id="announcements-title">Processos</h2>
+                        <div class="flow-root mt-6 print:h-full">
+                            <ul role="list" class="-my-5 divide-y divide-gray-200">
+                                {%if not pednencia_sicob%}
+                                    
+                                {%else%}
+                                    <li class="py-5 .print\:flex">
+                                        <div class="relative focus-within:ring-2 focus-within:ring-cyan-500">
+                                            <h3 class="text-sm font-semibold text-gray-800">
+                                                <a class="hover:underline focus:outline-none" onclick="exibirTexto('pendencia_siscob')">
+                                                    <!-- Extend touch target to entire panel -->
+                                                    <span class="absolute inset-0" aria-hidden="true"></span>
+                                                    Pendência - Débito (SICOB) 
+                                                </a>
+                                            </h3>
+                                            <p class="mt-1 text-sm text-gray-600 line-clamp-2">{{pednencia_sicob}}</p>
+                                            <pre class="mt-1 text-sm text-gray-600 line-clamp-2" id="pendencia_siscob" style="display: none;">{{pendencia_sicob_li}}</pre>
+                                        </div>
+                                    </li>
+                                {%endif%}
+                                {%if processos_fiscal != 0%}
+                                    <li class="py-5 .print\:flex">
+                                        <div class="relative focus-within:ring-2 focus-within:ring-cyan-500">
+                                            <h3 class="text-sm font-semibold text-gray-800">
+                                                <a class="hover:underline focus:outline-none" onclick="exibirTexto('pendencia_sief')">
+                                                    <!-- Extend touch target to entire panel -->
+                                                    <span class="absolute inset-0" aria-hidden="true"></span>
+                                                    Pendência - Processo Fiscal (SIEF)
+                                                </a>
+                                            </h3>
+                                            <p class="mt-1 text-sm text-gray-600 line-clamp-2">{{processos_fiscal}}</p>
+                                            <pre class="mt-1 text-sm text-gray-600 line-clamp-2" id="pendencia_sief" style="display: none;">{{processos_fiscal_li}}</pre>
+                                        </div>
+                                    </li>
+                                {%else%}
+                                {%endif%}
+                                {%if processos_fiscal_exg != 0%}
+                                    <li class="py-5 .print\:flex">
+                                        <div class="relative focus-within:ring-2 focus-within:ring-cyan-500">
+                                            <h3 class="text-sm font-semibold text-gray-800">
+                                                <a class="hover:underline focus:outline-none">
+                                                    <!-- Extend touch target to entire panel -->
+                                                    <span class="absolute inset-0" aria-hidden="true"></span>
+                                                    Processo Fiscal com Exigibilidade Suspensa (SIEF)
+                                                </a>
+                                            </h3>
+                                            <p class="mt-1 text-sm text-gray-600 line-clamp-2">{{processos_fiscal_exg}}</p>
+                                        </div>
+                                    </li>
+                                {%else%}
+                                {%endif%}
+                                {%if pendencia_sipade != 0%}
+                                    <li class="py-5 .print\:flex">
+                                        <div class="relative focus-within:ring-2 focus-within:ring-cyan-500">
+                                            <h3 class="text-sm font-semibold text-gray-800">
+                                                <a class="hover:underline focus:outline-none" onclick="exibirTexto('pendencia_sipade_li')">
+                                                    <!-- Extend touch target to entire panel -->
+                                                    <span class="absolute inset-0" aria-hidden="true"></span>
+                                                    Pendência - Parcelamento (SIPADE)
+                                                </a>
+                                            </h3>
+                                            <p class="mt-1 text-sm text-gray-600 line-clamp-2">{{pendencia_sipade}}</p>
+                                            <pre class="mt-1 text-sm text-gray-600 line-clamp-2" id="pendencia_sipade_li" style="display: none;">{{pendencia_sipade_li}}</pre>
+                                        </div>
+                                    </li>
+                                {%else%}
+                                {%endif%}
+                                {%if pendencia_parcelamento_siefpar_form == 'R$ 0,00'%}
+                                
+                                {%else%}
+                                    <li class="py-5">
+                                        <div class="relative focus-within:ring-2 focus-within:ring-cyan-500">
+                                            <h3 class="text-sm font-semibold text-gray-800">
+                                                <a class="hover:underline focus:outline-none">
+                                                    <!-- Extend touch target to entire panel -->
+                                                    <span class="absolute inset-0" aria-hidden="true"></span>
+                                                    Pendência – Parcelamento (SIEFPAR)
+                                                </a>
+                                            </h3>
+                                            <p class="mt-1 text-sm text-gray-600 line-clamp-2">{{pendencia_parcelamento_siefpar_form}}</p>
+                                        </div>
+                                    </li>
+                                {%endif%}
+                                {%if pendencia_insc_sida != 0%}
+                                    <li class="py-5 .print\:flex">
+                                        <div class="relative focus-within:ring-2 focus-within:ring-cyan-500">
+                                            <h3 class="text-sm font-semibold text-gray-800">
+                                                <a class="hover:underline focus:outline-none" onclick="exibirTexto('pendencia_sida')">
+                                                    <!-- Extend touch target to entire panel -->
+                                                    <span class="absolute inset-0" aria-hidden="true"></span>
+                                                    Pendência - Inscrição (SIDA)
+                                                </a>
+                                            </h3>
+                                            <p class="mt-1 text-sm text-gray-600 line-clamp-2">{{pendencia_insc_sida}}</p>
+                                            <pre id="pendencia_sida" style="display: none;" class="mt-1 text-sm text-gray-600 line-clamp-2">{{lista_pendencias}}</pre>
+                                        </div>
+                                    </li>
+                                {%endif%}
+                                {%if not pendencia_insc_sida %}
+                                
+                                {%endif%}
+
+                                {%if inscricao_exibilidae_sus != 0%}
+                                    <li class="py-5 .print\:flex">
+                                        <div class="relative focus-within:ring-2 focus-within:ring-cyan-500">
+                                            <h3 class="text-sm font-semibold text-gray-800">
+                                                <a class="hover:underline focus:outline-none" onclick="exibirTexto('inscricao_exibilidae_sus')">
+                                                    <!-- Extend touch target to entire panel -->
+                                                    <span class="absolute inset-0" aria-hidden="true"></span>
+                                                    Inscrição com Exigibilidade Suspensa (SIDA)
+                                                </a>
+                                            </h3>
+                                            <p class="mt-1 text-sm text-gray-600 line-clamp-2">{{inscricao_exibilidae_sus}}</p>
+                                            <pre id="pendencia_sida" style="display: none;" class="mt-1 text-sm text-gray-600 line-clamp-2">{{lista_pendencias}}</pre>
+                                        </div>
+                                    </li>
+                                {%endif%}
+                                {%if not inscricao_exibilidae_sus %}
+                                
+                                {%endif%}
+
+                                {%if processos_parcelamento_sispar != 0%}
+                                    <li class="py-5 .print\:flex">
+                                        <div class="relative focus-within:ring-2 focus-within:ring-cyan-500">
+                                            <h3 class="text-sm font-semibold text-gray-800">
+                                                <a class="hover:underline focus:outline-none">
+                                                    <!-- Extend touch target to entire panel -->
+                                                    <span class="absolute inset-0" aria-hidden="true"></span>
+                                                    Parcelamento com Exigibilidade Suspensa (SISPAR)
+                                                </a>
+                                            </h3>
+                                            <p class="mt-1 text-sm text-gray-600 line-clamp-2">{{processos_parcelamento_sispar}}</p>
+                                        </div>
+                                    </li>
+                                {%else%}
+                                {%endif%}
+                                {%if pendencia_insc_sisdiv != 0%}
+                                    <li class="py-5 .print\:flex">
+                                        <div class="relative focus-within:ring-2 focus-within:ring-cyan-500">
+                                            <h3 class="text-sm font-semibold text-gray-800">
+                                                <a class="hover:underline focus:outline-none" onclick="exibirTexto('pendencia_dividida')">
+                                                    <!-- Extend touch target to entire panel -->
+                                                    <span class="absolute inset-0" aria-hidden="true"></span>
+                                                    Pendência - Inscrição (Sistema DIVIDA)
+                                                </a>
+                                            </h3>
+                                            <p class="mt-1 text-sm text-gray-600 line-clamp-2">{{pendencia_insc_sisdiv}}</p>
+                                            <pre class="mt-1 text-sm text-gray-600 line-clamp-2" id="pendencia_dividida" style="display: none;">{{pendencia_insc_sisdiv_li}}</pre>
+                                        </div>
+                                    </li>
+                                {%else%}
+                                {%endif%}
+                                {%if inscricao_exibilidae_sus_dividida != 0%}
+                                    <li class="py-5 .print\:flex">
+                                        <div class="relative focus-within:ring-2 focus-within:ring-cyan-500">
+                                            <h3 class="text-sm font-semibold text-gray-800">
+                                                <a class="hover:underline focus:outline-none">
+                                                    <!-- Extend touch target to entire panel -->
+                                                    <span class="absolute inset-0" aria-hidden="true"></span>
+                                                    Inscrição com Exigibilidade Suspensa (Sistema DIVIDA)
+                                                </a>
+                                            </h3>
+                                            <p class="mt-1 text-sm text-gray-600 line-clamp-2">{{inscricao_exibilidae_sus_dividida}}</p>
+                                        </div>
+                                    </li>
+                                {%else%}
+                                {%endif%}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class="grid-cols-1 gap-4 hidden print:block print:relative">
+            <!-- Announcements -->
+            <section aria-labelledby="announcements-title">
+                <div class="rounded-lg bg-white overflow-hidden shadow">
+                    <div class="p-6 pri">
+                        <h2 class="text-base font-semibold text-gray-900" id="announcements-title2">Resumo de Dados</h2>
+                        <div class="flow-root mt-6 print:h-full">
+                            <ul role="list" class="-my-5 divide-y divide-gray-200">
+                                {% if not total_pendencias %}
+                                    <span class="mt-1 text-sm text-gray-600 line-clamp-2">Empresa livre de Omissões</span>
+                                {% else %}
+                                    <li class="py-5">
+                                        <div class="relative focus-within:ring-2 focus-within:ring-cyan-500">
+                                            <h3 class="text-sm font-semibold text-gray-800">
+                                                <a class="hover:underline focus:outline-none" onclick="exibirTexto('total_pendencias')">
+                                                    <!-- Extend touch target to entire panel -->
+                                                    <span class="absolute inset-0" aria-hidden="true"></span>
+                                                    Omissões
+                                                </a>
+                                            </h3>
+                                            <p class="mt-1 text-sm text-gray-600 line-clamp-2">{{ total_pendencias }}</p>
+                                        </div>
+                                    </li>
+                                {% endif %}
+        
+                                {% if not total_processos %}
+                                    
+                                {% else %}
+                                    <li class="py-5">
+                                        <div class="relative focus-within:ring-2 focus-within:ring-cyan-500">
+                                            <h3 class="text-sm font-semibold text-gray-800">
+                                                <a class="hover:underline focus:outline-none" onclick="exibirTexto('total_processos')">
+                                                    <!-- Extend touch target to entire panel -->
+                                                    <span class="absolute inset-0" aria-hidden="true"></span>
+                                                    Processos
+                                                </a>
+                                            </h3>
+                                            <p class="mt-1 text-sm text-gray-600">{{ total_processos }}</p>
+                                        </div>
+                                    </li>
+                                {% endif %}
+                                {%if pendencia_parcelamento_siefpar_form == 'R$ 0,00'%}
+                                
+                                {%else%}
+                                    <li class="py-5">
+                                        <div class="relative focus-within:ring-2 focus-within:ring-cyan-500">
+                                            <h3 class="text-sm font-semibold text-gray-800">
+                                                <a class="hover:underline focus:outline-none">
+                                                    <!-- Extend touch target to entire panel -->
+                                                    <span class="absolute inset-0" aria-hidden="true"></span>
+                                                    Pendência – Parcelamento (SIEFPAR)
+                                                </a>
+                                            </h3>
+                                            <p class="mt-1 text-sm text-gray-600 line-clamp-2">{{pendencia_parcelamento_siefpar_form}}</p>
+                                        </div>
+                                    </li>
+                                {%endif%}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+            </main>
+            <div class="text-center print:hidden">
+                <a a href="/"><button type="button" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-sky-500 bg-opacity-50 hover:bg-sky-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-sky-700">Nova Extração</button></a>
+            </div>
+            <footer>
+                <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 lg:max-w-7xl">
+                    <div class="border-t border-gray-200 py-8 text-sm text-gray-500 text-center sm:text-left print:hidden">
+                            <span class="block sm:inline">
+                                Dados sujeitos a falhas, de preferência sempre confira o PDF original!
+                            </span>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        <script>
+            function exibirTexto(id) {
+                var elemento = document.getElementById(id);
+                if (elemento) {
+                    if (elemento.style.display === "none") {
+                        elemento.style.display = "block";
+                    } else {
+                        elemento.style.display = "none";
+                    }
+                } else {
+                    console.error("Elemento não encontrado com o ID fornecido: " + id);
+                }
+            }
+        </script>
+    </body>
+</html>
