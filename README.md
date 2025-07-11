@@ -71,8 +71,17 @@ O **Resumo Fiscal** é uma ferramenta desenvolvida para facilitar a leitura e an
 
 5. **Execute a aplicação**
    ```bash
-   python app.py
+   uv run python app.py
    ```
+
+A aplicação estará disponível em `http://localhost:5000`
+
+## Docker
+
+```bash
+docker build -t resumo-fiscal .
+docker run -p 6000:5000 resumo-fiscal
+```
 
 A aplicação estará disponível em `http://localhost:5000`
 
