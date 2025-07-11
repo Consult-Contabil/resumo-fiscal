@@ -55,7 +55,8 @@ O **Resumo Fiscal** é uma ferramenta desenvolvida para facilitar a leitura e an
 
 2. **Instale as dependências Python**
    ```bash
-   pip install -r requirements.txt
+   uv venv
+   uv pip install -r pyproject.toml
    ```
 
 3. **Instale as dependências Node.js**
@@ -70,10 +71,19 @@ O **Resumo Fiscal** é uma ferramenta desenvolvida para facilitar a leitura e an
 
 5. **Execute a aplicação**
    ```bash
-   python app.py
+   uv run python app.py
    ```
 
 A aplicação estará disponível em `http://localhost:5000`
+
+## Docker
+
+```bash
+docker build -t resumo-fiscal .
+docker run -p 8080:5000 resumo-fiscal
+```
+
+A aplicação estará disponível em `http://localhost:8080`
 
 ## 📖 Como Usar
 
