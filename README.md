@@ -55,7 +55,8 @@ O **Resumo Fiscal** é uma ferramenta desenvolvida para facilitar a leitura e an
 
 2. **Instale as dependências Python**
    ```bash
-   pip install -r requirements.txt
+   uv venv
+   uv pip install -r pyproject.toml
    ```
 
 3. **Instale as dependências Node.js**
