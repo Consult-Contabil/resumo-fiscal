@@ -80,10 +80,10 @@ A aplicação estará disponível em `http://localhost:5000`
 
 ```bash
 docker build -t resumo-fiscal .
-docker run -p 6000:5000 resumo-fiscal
+docker run -p 8080:5000 resumo-fiscal
 ```
 
-A aplicação estará disponível em `http://localhost:5000`
+A aplicação estará disponível em `http://localhost:8080`
 
 ## 📖 Como Usar
 
