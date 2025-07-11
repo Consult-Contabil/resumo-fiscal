@@ -6,6 +6,7 @@ import locale
 import os
 import emoji
 from collections import defaultdict
+from babel.numbers import format_currency
 
 
 app = Flask(__name__)
@@ -264,7 +265,7 @@ def pendencia_divergencia(texto_pdf):
     tabela_resultados = []
     for chave, dados in resultados.items():
         codigo, nome_debito = chave.split(' ', 1)
-        total = locale.currency(dados["Total"], grouping=True, symbol=True)
+        total = format_currency(dados["Total"], "BRL", locale="pt_BR")
         tabela_resultados.append([codigo, nome_debito, total])
 
     resultado_table = tabulate(tabela_resultados, headers=["Código do débito", "Nome do débito", "Total"], tablefmt="html")
@@ -742,30 +743,29 @@ def exibir_formulario():
 @app.route("/resultado", methods=["POST"])
 def processar_formulario():
     arquivo_pdf = request.files["arquivo_pdf"]
-    locale.setlocale(locale.LC_ALL, 'pt_BR.UTF-8')
 
     texto_pdf, nome_empresa, cnpj = converter_pdf_para_texto(arquivo_pdf)
     debitos = buscar_valores_debitos(texto_pdf)
     debitos_exigibilidade_suspensa = extrair_debitos_exigibilidade_suspensa(texto_pdf)
     total_debitos_exs = round(sum(debitos_exigibilidade_suspensa.values()), 2)
-    total_debitos_exs_formatado = locale.currency(total_debitos_exs, grouping=True, symbol=True)
+    total_debitos_exs_formatado = format_currency(total_debitos_exs, "BRL", locale="pt_BR")
     total_debitos = round(sum(debitos.values()), 2)
-    total_debitos_formatado = locale.currency(total_debitos, grouping=True, symbol=True)
+    total_debitos_formatado = format_currency(total_debitos, "BRL", locale="pt_BR")
     tabela = []
     for nome, valor in debitos.items():
-        valor_formatado = locale.currency(valor, grouping=True, symbol=True)
+        valor_formatado = format_currency(valor, "BRL", locale="pt_BR")
         tabela.append([nome, valor_formatado])
     
     resultado_table = tabulate(tabela, headers=["Nome do Débito", "Valor"], tablefmt="html")
 
     tabela_debitos_exs = []
     for nome, valor in debitos_exigibilidade_suspensa.items():
-        valor_formatado = locale.currency(valor, grouping=True, symbol=True)
+        valor_formatado = format_currency(valor, "BRL", locale="pt_BR")
         tabela_debitos_exs.append([nome, valor_formatado])
     
     resultado_table_exs = tabulate(tabela_debitos_exs, headers=["Nome do débito", "Valor"], tablefmt="html")
     tabela_divergencia, total_debitos_div = pendencia_divergencia(texto_pdf)
-    total_debitos_div_for = locale.currency(total_debitos_div, grouping=True, symbol=True)
+    total_debitos_div_for = format_currency(total_debitos_div, "BRL", locale="pt_BR")
 
     
     processos_fiscal, processos_fiscal_li = count_pendencia_processo_fiscal(texto_pdf)
@@ -775,7 +775,7 @@ def processar_formulario():
     processos_parcelamento_sispar = count_pendencia_parcelamento_sispar(texto_pdf)
     # print(f'Quantidade de pendencias parcelamento sispar: {processos_parcelamento_sispar}')
     pendencia_parcelamento_siefpar = count_pendencia_parcelamento_siefpar(texto_pdf)
-    pendencia_parcelamento_siefpar_form = locale.currency(pendencia_parcelamento_siefpar, grouping=True, symbol=True)
+    pendencia_parcelamento_siefpar_form = format_currency(pendencia_parcelamento_siefpar, "BRL", locale="pt_BR")
     # print(f'pendencia de parcelamento: {pendencia_parcelamento_siefpar_form}')
     pendencia_insc_sida, lista_pendencias = count_pendencia_insc_sida(texto_pdf)
     # print(f'Pendencia de inscrição sida: {pendencia_insc_sida}')

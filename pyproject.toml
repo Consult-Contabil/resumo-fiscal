@@ -58,6 +58,7 @@ dependencies = [
     "wsproto==1.2.0",
     "emoji==2.8.0",
     "tailwindcss",
+    "babel>=2.17.0",
 ]
 
 [build-system]
